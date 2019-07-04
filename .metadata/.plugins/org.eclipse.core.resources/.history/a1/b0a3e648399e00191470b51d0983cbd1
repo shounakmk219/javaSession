@@ -1,0 +1,33 @@
+package com.sapient.pe.bank;
+
+public class LoanAccount extends Account{
+	private int outstandingBalance;
+	private int loanAmount;
+	LoanAccount(Person user) {
+		super(user);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	int depositMoney(int i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	int withdrawMoney(int i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public int getOutstandingBalance() {
+		return outstandingBalance;
+	}
+	public void setOutstandingBalance(int outstandingBalance) {
+		this.outstandingBalance = outstandingBalance;
+	}
+	public int getLoanAmount() {
+		return loanAmount;
+	}
+	public void setLoanAmount(int loanAmount) {
+		this.loanAmount = loanAmount;
+	}
+	
+}

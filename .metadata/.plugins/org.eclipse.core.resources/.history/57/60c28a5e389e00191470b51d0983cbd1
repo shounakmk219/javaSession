@@ -1,0 +1,11 @@
+package com.sapient.pe.bank;
+
+public class LoanAccount extends Account{
+	private int outstandingBalance;
+	private int loanAmount;
+	LoanAccount(Person user) {
+		super(user);
+		// TODO Auto-generated constructor stub
+	}
+	
+}

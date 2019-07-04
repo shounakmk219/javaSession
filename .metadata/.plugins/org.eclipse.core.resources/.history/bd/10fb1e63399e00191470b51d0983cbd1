@@ -1,0 +1,36 @@
+package com.sapient.pe.bank;
+
+abstract class Account {
+	final private long accountNumber;
+	private Person user;
+	protected int balance;
+	static int accounts=100001;
+	Account(Person user){
+		this.user=user;
+		this.accountNumber=++accounts;
+		this.balance=0;
+	}
+	public static void setAccounts(int accounts) {
+		Account.accounts = accounts;
+	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public float getAccountNumber() {
+		return accountNumber;
+	}
+	public static int getAccounts() {
+		return accounts;
+	}
+			
+	@Override
+	public String toString() {
+		return "a/c : "+accountNumber+"\n"+user.toString()+"\nBalance : "+balance;
+	}
+	abstract int depositMoney(int i);
+	abstract int withdrawMoney(int i);
+}

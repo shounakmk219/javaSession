@@ -1,0 +1,49 @@
+package com.sapient.pe.bank;
+
+public class Account {
+	final private long accountNumber;
+	private Person user;
+	private int balance;
+	static int accounts=100001;
+	int MIN_ACCOUNT_BALANCE=1000;
+	int MAX_WITHDRAW_AMOUNT=Integer.MAX_VALUE;
+	Account(Person user){
+		this.user=user;
+		this.accountNumber=++accounts;
+		this.balance=0;
+	}
+	public static void setAccounts(int accounts) {
+		Account.accounts = accounts;
+	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public float getAccountNumber() {
+		return accountNumber;
+	}
+	public static int getAccounts() {
+		return accounts;
+	}
+	public int depositMoney(int amount) {
+		this.balance+=amount;
+		return this.balance;
+	}
+	
+	public int withdrawMoney(int amount) {
+		if(amount<=MAX_WITHDRAW_AMOUNT)
+		if(this.balance-amount>=MIN_ACCOUNT_BALANCE) {
+			this.balance-=amount;
+			return amount;
+		}
+		return 0;
+	}
+		
+	@Override
+	public String toString() {
+		return "a/c : "+accountNumber+"\n"+user.toString()+"\nBalance : "+balance;
+	}
+}

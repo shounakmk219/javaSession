@@ -1,0 +1,14 @@
+package bank;
+
+public class Portal {
+	public static void main(String args[]) {
+		Person person=new Person("Amey", "Bhilegaonkar");
+		person.setAddress(new Address("MG road", "Bangalore", "Karnataka"));
+		Account account=new Account(person);
+		account.depositMoney(60000);
+		System.out.println("Balance: "+account.getBalance());
+		System.out.println(account.withdrawMoney(60000));
+		System.out.println(account.withdrawMoney(5000));
+		System.out.println("Balance: "+account.getBalance());			
+	}
+}

@@ -1,0 +1,59 @@
+package com.sapient.pe.bank;
+
+import java.util.Scanner;
+
+import com.sapient.pe.bank.Account.AccountType;
+
+public class Portal {
+	public static void main(String args[]) {
+		Person person=getPersonData();
+		Address address=getAddresstData();
+		person.setAddress(address);
+		Account account=getAccountData(person);
+		account.depositMoney(60000);
+		System.out.println("Balance: "+account.getBalance());
+		System.out.println(account.withdrawMoney(60000));
+		System.out.println(account.withdrawMoney(5000));
+		System.out.println("Balance: "+account.getBalance());	
+		
+		System.out.println("======================================\n"+account.toString()+"\n======================================\n");
+	}
+	
+	public static Account getAccountData(Person person) {
+		Account account=null;
+		System.out.print("Select a/c type-\n1. Saving\n2. Current\n3. Loan\nEnter option: ");
+		Scanner scan=new Scanner(System.in);
+		int choice=scan.nextInt();
+		switch(choice) {
+			case 1: account=new Account(person, AccountType.SAVING);
+			case 2: account=new Account(person, AccountType.CURRENT);
+			case 3: account=new Account(person, AccountType.LOAN);
+		}
+		return account;
+	}
+	public static Person getPersonData() {
+		Person person;
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter first name: ");
+		String fname=scan.next();
+		System.out.print("Enter last name: ");
+		person=new Person(fname, scan.next());
+	
+		return person;
+	}
+	public static Address getAddresstData() {
+		Address address=new Address();
+		String temp;
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter street name: ");
+		temp=scan.next();
+		address.setStreet(temp);
+		System.out.print("Enter city name: ");
+		temp=scan.next();
+		address.setCity(temp);
+		System.out.print("Enter state name: ");
+		temp=scan.next();
+		address.setState(temp);
+		return address;
+	}
+}

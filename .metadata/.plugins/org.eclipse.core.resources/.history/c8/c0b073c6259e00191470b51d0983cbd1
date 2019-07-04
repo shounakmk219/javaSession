@@ -1,0 +1,11 @@
+package com.sapient.pe.bank;
+
+public class SavingAccount extends Account {
+
+	static int MIN_ACCOUNT_BALANCE=10000;
+	static int MAX_WITHDRAW_AMOUNT=50000;
+	SavingAccount(Person user) {
+		super(user);
+		// TODO Auto-generated constructor stub
+	}
+}

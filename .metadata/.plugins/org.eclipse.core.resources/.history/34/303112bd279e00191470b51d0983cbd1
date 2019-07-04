@@ -1,0 +1,10 @@
+package com.sapient.pe.bank;
+
+public class LoanAccount extends Account{
+
+	LoanAccount(Person user) {
+		super(user);
+		// TODO Auto-generated constructor stub
+	}
+
+}

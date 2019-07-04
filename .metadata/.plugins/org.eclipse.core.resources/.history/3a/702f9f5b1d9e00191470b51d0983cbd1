@@ -1,0 +1,26 @@
+package com.sapient.pe.bank;
+
+import java.util.Scanner;
+
+import com.sapient.pe.bank.Account.AccountType;
+
+public class Portal {
+	public static void main(String args[]) {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter first name: ");
+		String fname=scan.next();
+		System.out.print("Enter last name: ");
+		Person person=new Person(fname, scan.next());
+		System.out.print("Enter street, city, state: ");
+		String address="";
+		
+		Account account=new Account(person, AccountType.CURRENT);
+		account.depositMoney(60000);
+		System.out.println("Balance: "+account.getBalance());
+		System.out.println(account.withdrawMoney(60000));
+		System.out.println(account.withdrawMoney(5000));
+		System.out.println("Balance: "+account.getBalance());	
+		
+		System.out.println("======================================\n"+account.toString()+"\n======================================\n");
+	}
+}
