@@ -1,0 +1,6 @@
+package bank;
+
+public class Portal {
+	Account account=new Account("amey bhilegaonkar", "colive, bangalore");
+	
+}

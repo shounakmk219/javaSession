@@ -1,0 +1,11 @@
+package company;
+
+public class Client {
+
+	public static void main(String args[]) {
+		Employee amey=new Employee(123, "Amey Bhilegaonkar", 45000);
+		if(amey.applyForVacation(23))
+			System.out.println("Leave granted.");
+		else System.out.println("insufficient leaves");
+	}
+}
